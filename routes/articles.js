@@ -3,7 +3,7 @@ const articleRouter = require('express').Router();
 const Article = require('../models/model');
 
 async function main(){
-    const db = await mongoose.connect('mongodb://localhost:27017');
+    const db = await mongoose.connect('mongodb://localhost:27017/Demo');
 }
 main().catch(err=> console.log(err));
 
