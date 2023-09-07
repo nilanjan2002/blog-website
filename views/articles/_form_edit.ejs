@@ -1,0 +1,25 @@
+<form action="/articles" method="POST" style="height: 75vh;" class="container-sm form-group text-left d-flex flex-column bg-dark w-75 text-light">
+    <label class="h2 mt-3" for="title">Title</label><br>
+    <input required class="form-control-lg w-100" type="text" id="title" name="title"><br>
+
+    <label class="h3" for="description">Description</label><br>
+    <textarea name="description" id="description" maxlength="500" class="mb-4 form-control-lg h-25 w-100"></textarea>
+
+    <label class="h2">Genre</label>
+    <div class="radio-btns d-flex justify-content-center" style="gap:25px">
+        <input type="radio" name="genre" id="science" value="Science">
+        <label for="science">Science</label>
+
+        <input type="radio" name="genre" id="photography" value="Photography">
+        <label for="photography">Photography</label>
+
+        <input type="radio" name="genre" id="health&wellness" value="Health">
+        <label for="health&wellness">Health & Wellness</label>
+
+        <input type="radio" name="genre" id="technology" value="Technology">
+        <label for="technology">Technology</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2 mb-2">Create</button>
+    <button type="submit" class="btn btn-secondary mt-2">Cancel</button>
+</form>
