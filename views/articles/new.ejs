@@ -10,6 +10,8 @@
     <header class="position-relative">
         <h1 class="text-center mt-4 mb-4">Create Article</h1>
     </header>
-    <%- include('_form_edit') %>
+    <form action="/articles" method="POST" style="height: 75vh;" class="container-sm form-group text-left d-flex flex-column bg-dark w-75 text-light">
+        <%- include('_form_edit') %>
+      </form>
 </body>
 </html>
