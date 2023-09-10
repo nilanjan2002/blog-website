@@ -82,7 +82,7 @@ app.set('view engine','ejs');
 
 app.get('/',async (req,res)=>{
     const images = await getImages();
-    console.log(images);
+    // console.log(images);
     articles = articles.map((article,index)=>{
         return {
             ...article, image: images[index]
