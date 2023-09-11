@@ -3,7 +3,7 @@ const articleRouter = require('express').Router();
 const Article = require('../models/model');
 
 async function main(){
-    const db = await mongoose.connect('mongodb://localhost:27017');
+    await mongoose.connect('mongodb://localhost:27017',{'useUnifiedTopology': true},{'useNewUrlParser': true});
 }
 main().catch(err=> console.log(err));
 
@@ -17,7 +17,7 @@ articleRouter.get('/:id', async (req, res) => {
       if (!result) {
         return res.status(404).json({ message: 'Article not found' });
       }
-      res.json(result);
+      res.render('articles/read_more.ejs',{article:result});
     } catch (error) {
       console.error(error);
       res.status(500).json({ message: 'Internal server error' });
@@ -42,6 +42,8 @@ articleRouter.post('/',async (req,res)=>{
     }
     // res.redirect('/');
 })
+
+
 
 
 module.exports = articleRouter;
