@@ -11,28 +11,26 @@
         <h1 class="text-center mt-4 mb-4">Blog Website</h1>
         <a href="/articles/new" class="btn btn-primary position-absolute" style="right:4rem; top:1rem;">New Article</a>
     </header>
-
-    <div class="container d-flex justify-content-center flex-wrap" style="gap:30px ;">
-        <% articles.forEach(article=> { %>
-            <div class="card bg-light rounded-3" style="width:35%; ">
-                <img src= "<%=article.image%>/300x200 "class="card-img-top" alt="">
-                <div class="card-body d-flex flex-column">
-                    <div class="card-title text-center h3 "><%= article.title %></div>
-                    <div class="card-subtitle mb-3 p text-muted fs-6"><%= article.date %></div>
-                    <div class="card-text  mb-2 flex-fill"><%= fn(article.description) %></div>
-                    <div class="text-end mb-3"><%= article.genre %></div>
-                    <div class="btn-group" role="group">
-                        <a href="articles/<%=article._id%>" class="btn btn-light text-dark">Read More</a>
-                        <a href="" class="btn btn-dark">Edit</a>
-                        <a href="" class="btn btn-outline-danger">Delete</a>
-                    </div>
-
-                </div>
+    <div class="container d-flex justify-content-center flex-wrap" style="gap:30px;">
+        <% articles.forEach(article => { %>
+          <div class="card bg-light rounded-3" style="width: 35%;">
+            <img src="<%= article.image %>/300x200" class="card-img-top" alt="">
+            <div class="card-body d-flex flex-column">
+              <div class="card-title text-center h3"><%= article.title %></div>
+              <div class="card-subtitle mb-3 p text-muted fs-6"><%= article.date %></div>
+              <div class="card-text mb-2 flex-fill"><%= fn(article.description) %></div>
+              <div class="text-end mb-3"><%= article.genre %></div>
+              <div class="btn-group" role="group">
+                <a href="articles/<%= article._id %>" class="btn btn-light text-dark">Read More</a>
+                <a href="" class="btn btn-dark">Edit</a>
+                <form action="/articles/<%= article._id %>?_method=DELETE" method="POST">
+                    <input type="submit" name="_method" value="DELETE" class="btn btn-outline-danger">Delete</input>
+                  </form>
+                  
+              </div>
             </div>
-            <% }) %>
-        </div>
-
-
-
+          </div>
+        <% }) %>
+      </div>
 </body>
 </html>

@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const articleRouter = require('express').Router();
 const Article = require('../models/model');
+articleRouter.use(require('method-override')('_method'))
 
 async function main(){
     await mongoose.connect('mongodb://localhost:27017',{'useUnifiedTopology': true},{'useNewUrlParser': true});
@@ -23,6 +24,18 @@ articleRouter.get('/:id', async (req, res) => {
       res.status(500).json({ message: 'Internal server error' });
     }
   });
+
+  articleRouter.delete('/:id', async(req,res)=>{
+    console.log('delete route hit')
+    try {
+      await Article.deleteOne({_id:req.params.id});
+      res.redirect('/');
+    } catch (error) {
+      alert('Couldn\'t delete the requested article');
+      res.redirect('/');
+    }
+  })
+      
   
 
 articleRouter.post('/',async (req,res)=>{

@@ -1,6 +1,7 @@
 const express = require('express');
 const axios = require('axios');
 const app = express();
+const methodOverride = require('method-override');
 const routes = require('./routes/articles')
 const dbArticles = require('./models/model')
 require('dotenv').config();
@@ -22,7 +23,7 @@ const getRandomDate = () => {
 //     .then(res => res.data)
 //     .catch(err => console.log(err));
 // }
-
+app.use(methodOverride('_method'));
 app.use(express.urlencoded({extended:false}))
 
 // const getBlogImage = function(query){
@@ -91,7 +92,7 @@ app.get('/',async (req,res)=>{
         ..._doc, date:_doc.date.toLocaleDateString()
       }
     })
-    console.log(articles)
+    // console.log(articles)
     // console.log(images);
     // articles = articles.map((article,index)=>{
     //     return {
