@@ -1,0 +1,17 @@
+{
+        "users": [
+            {
+                "id": 2,
+                "name": "Nilanjan Sengupta",
+                "email": "snilanjan2@gmail.com",
+                "password": "1234"
+            }
+            ,
+            {
+                "id": 3,
+                "name": "Rehmat Papneja",
+                "email": "rehmat3108@gmail.com",
+                "password": "1234"
+            }
+        ]
+    }

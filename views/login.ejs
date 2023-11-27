@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login Pages</title>
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Amaranth&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="login-box">
+    <div class="login-box__left-box">
+      <div class="login-box-content login-box-content--left">
+        <div class="login-box-content__title">
+          Welcome to FXXL
+        </div>
+        <div class="login-box-content__text">
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam volupt.
+          
+        </div>
+        <div class="login-box-content__know-more">Know More</div>
+      </div>
+    </div>
+    <div class="login-box__right-box">
+      <div class="login-box-content-form">
+        <div class="login-box-content-form__title">
+          Signin
+        </div>
+        <form class="login-box-content-form__form-body" action="/login" method="POST">
+            <input type="email" name="email" value="" placeholder="Enter Username ..." class="login-box-content-form__form-body-input" required>
+          </fieldset>
+            <input type="password" name="password" value="" placeholder="Enter Password ..." class="login-box-content-form__form-body-input" required>
+          <button type="submit" class="login-box-content-form__form-body-button">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+<style>
+    /* Colors */
+:root {
+  --background-color: #dcdcdc;
+  --blue-background: #007bff;
+  --white-color: #ffffff;
+  --gray-text-color: #757575;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Amaranth', 'Comfortaa', sans-serif;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  background: var(--background-color);
+}
+
+.login-box {
+  width: 100%;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.login-box__left-box {
+  width: 50%;
+  background-color: var(--blue-background);
+  border-radius: 20px 0 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 450px;
+}
+
+.login-box-content__left {
+  width: 65%;
+  color: var(--white-color);
+}
+
+.login-box-content-form {
+  color: var(--gray-text-color);
+  width: 60%;
+}
+
+.login-box-content-form__title {
+  font-size: 20px;
+  display: block;
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+.login-box-content-form__title:after {
+  content: '';
+  display: block;
+  margin: auto;
+  width: 10%;
+  height: 3px;
+  background-color: var(--blue-background);
+  margin-top: 10px;
+}
+
+.login-box-content-form__form-body {
+  width: 65%;
+  margin: auto;
+}
+
+.login-box-content-form__form-body-input {
+  width: 100%;
+  border: none;
+  padding: 10px;
+  border-bottom: 1px solid var(--gray-text-color);
+  margin-bottom: 50px;
+  opacity: 0.5;
+}
+
+.login-box-content-form__form-body-input:focus {
+  outline: none;
+  opacity: 1;
+}
+
+.login-box-content-form__form-body-button {
+  width: 100%;
+  background-color: var(--blue-background);
+  border: none;
+  border-radius: 20px;
+  color: white;
+  padding: 10px 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.login-box-content-form__form-body-button:hover {
+  box-shadow: 0px 1px 5px 0.5px var(--gray-text-color);
+}
+
+.login-box__right-box {
+  width: 50%;
+  background-color: var(--white-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 450px;
+  border-radius: 0 20px 20px 0;
+  padding: 50px 0;
+}
+
+@media (max-width: 480px) {
+  .login-box {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .login-box__left-box,
+  .login-box__right-box {
+    width: 100%;
+    border-radius: 0;
+    min-height: 350px;
+  }
+
+  .login-box-content {
+    padding: 100px 50px;
+  }
+}
+
+@media (min-width: 600px) {}
+
+@media (min-width: 960px) {}
+
+@media (min-width: 1200px) {}
+
+</style>
+</html>

@@ -4,7 +4,7 @@ const Article = require('../models/model');
 articleRouter.use(require('method-override')('_method'))
 
 async function main(){
-    await mongoose.connect('mongodb://localhost:27017',{'useUnifiedTopology': true},{'useNewUrlParser': true});
+    await mongoose.connect('mongodb://localhost:27017/test',{'useUnifiedTopology': true},{'useNewUrlParser': true});
 }
 main().catch(err=> console.log(err));
 
